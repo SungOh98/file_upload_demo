@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: demo
+  servlet:
+    multipart:
+      max-file-size: -1
+      max-request-size: -1
+
+server:
+  tomcat:
+    max-http-form-post-size: 10GB
