@@ -22,7 +22,6 @@ import java.nio.file.Paths;
 @RequestMapping("/upload")
 @AllArgsConstructor
 public class UserController {
-
     private final FileUploadWithFolder fileUploadWithFolder;
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
