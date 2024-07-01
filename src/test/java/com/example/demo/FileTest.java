@@ -7,9 +7,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 
 @SpringBootTest
 public class FileTest {
@@ -34,13 +36,27 @@ public class FileTest {
             files[i] = new MockMultipartFile("files", String.format("file%d.txt", i), "text/plain", new byte[0]);
         }
         ftpUtils.connect();
-        ftpUtils.uploadFile(files, "/home/sung-o/company/LivinAI");
+        ftpUtils.changeDirectories("/home/sung-o/company/LivinAI");
+        ftpUtils.uploadFile(files,"/home/sung-o/company/LivinAI");
         ftpUtils.disconnect();
         //when
 
         //then
 
     }
+
+    @Test
+    public void tmp() throws Exception{
+        //given
+        String a = "/Users/a/b/c/d";
+        a = a.substring(1);
+        String[] tmp = a.split("/");
+        System.out.println(Arrays.toString(tmp));
+        //when
+
+        //then
+
+     }
 
 
 }

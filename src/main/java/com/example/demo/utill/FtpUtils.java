@@ -43,6 +43,7 @@ public class FtpUtils {
 
     //"/a/b/c/d"
     public void changeDirectories(String targetPath) throws IOException {
+        targetPath = targetPath.substring(1);
         // "[a, b, c, d, e]"
         String[] directories = targetPath.split(File.separator);
         String curPath = "";

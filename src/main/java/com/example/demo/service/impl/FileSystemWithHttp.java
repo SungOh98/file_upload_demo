@@ -2,6 +2,7 @@ package com.example.demo.service.impl;
 
 import com.example.demo.service.FileSystemService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -14,6 +15,7 @@ import java.nio.file.StandardCopyOption;
 
 @Slf4j
 @Service
+@Primary
 public class FileSystemWithHttp extends FileSystemService {
 
     @Override

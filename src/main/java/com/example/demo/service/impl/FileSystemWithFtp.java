@@ -17,19 +17,20 @@ import java.nio.file.Path;
 
 @Slf4j
 @Service
-@Primary
+//@Primary
 @RequiredArgsConstructor
 public class FileSystemWithFtp extends FileSystemService {
     private final FtpUtils ftpUtils;
     @Override
     public void uploadFile(MultipartFile[] files, Path companyPath) throws IOException {
-        // 파일 경로 상 디렉토리 만들기
-        ftpUtils.changeDirectories(companyPath.toString());
 
         // 연결
         ftpUtils.connect();
 
-        // 업로드 로직
+        // 파일 경로 상 디렉토리 만들기
+        ftpUtils.changeDirectories(companyPath.toString());
+
+        // 파일들 업로드
         ftpUtils.uploadFile(files,  companyPath.toString());
 
         // 연결 해제
