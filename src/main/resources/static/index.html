@@ -6,7 +6,10 @@
 </head>
 <body>
 <form action="/upload" method="POST" enctype="multipart/form-data">
-    <input type="file" name="file" multiple webkitdirectory/>
+    <label for="companyName">Company Name:</label>
+    <input type="text" id="companyName" name="companyName" required/>
+    <br/><br/>
+    <input type="file" name="files" multiple webkitdirectory/>
     <input type="submit"/>
 </form>
 </body>
