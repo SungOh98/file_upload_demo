@@ -14,7 +14,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleAllException(Exception ex) {
-        log.error("예상치 못한 에러 발생! {} \n {}", ex.getMessage(), ex.getStackTrace());
+        log.error("예상치 못한 에러 발생! {} \n", ex.getMessage(), ex);
         return ResponseEntity.internalServerError().body(ErrorResponse.from("예상치못한 에러 발생"));
 
 
